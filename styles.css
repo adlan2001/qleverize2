@@ -1,0 +1,185 @@
+/* Base Colors */
+:root {
+  --primary: #82B36F; /* Pastel Green */
+  --secondary: #9E8EBF; /* Soft Lavender */
+  --accent: #A5D08A; /* Light Mint Green */
+  --background-light: #F4F4F6; /* Neutral Off-White */
+  --background-dark: #2E3B30; /* Muted Green-Gray */
+
+/* Text Colors */
+  --text-dark: #1E2B1B; /* Deep Green for Contrast */
+  --text-light: #FFFFFF; /* White for Bright Backgrounds */
+  --text-muted: #6B8263; /* Muted Pastel Olive for Subtext */
+  --text-on-primary: #E8EAF6; /* Light Cool Gray for Readability on --primary */
+
+/* Highlights */
+  --highlight-positive: #82B36F; /* Pastel Green for Success */
+  --highlight-warning: #F8D49D; /* Soft Warm Amber */
+  --highlight-error: #DFAAAA; /* Muted Pinkish Red for Errors */
+
+/* Violet Integration */
+  --violet-accent: #9575CD; /* Subtle Pastel Purple */
+  --violet-highlight: #5E35B1; /* Deep Tech Violet */
+  --text-on-violet: #F8F5F9; /* Off-White for Violet Backgrounds */
+}
+
+/* General Styles */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h2, h3 {
+  color: var(--primary);
+  font-weight: bold;
+  text-transform: none;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Main BG */
+.bg-primary {
+  background-color: var(--primary) !important;
+  color: var(--text-light) !important;
+}
+
+/* Section Backgrounds */
+section {
+  padding: 2rem 1rem;
+}
+
+section:nth-child(even) {
+  background-color: var(--secondary);
+}
+
+section:nth-child(odd) {
+  background-color: var(--background);
+}
+
+/* Licensing Section Background */
+#pricing {
+  background-color: #f5f5fa; /* Soft Lavender Gray */
+}
+
+/* Cards */
+.card {
+  background-color: var(--background); /* White for clean contrast */
+  border: 1px solid var(--secondary); /* Green border to define boxes */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--text-light); /* White text for better contrast */
+  border: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent); 
+  color: var(--text-light); /* Maintain white text for readability */
+  transform: scale(1.05);
+}
+
+/* Alerts and Warnings */
+.alert {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  background-color: var(--error);
+  color: var(--text);
+}
+
+.alert-info {
+  background-color: var(--primary);
+  color: var(--text);
+}
+
+.alert-success {
+  background-color: var(--accent);
+  color: var(--text);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--background-dark) !important; /* Use custom dark background */
+  color: var(--text-light); /* Ensure white text */
+}
+
+.navbar-brand,
+.nav-link {
+  color: var(--text-light) !important; /* White text for readability */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary) !important; /* Use pastel green for hover */
+}
+
+.navbar-toggler {
+  border-color: var(--text-light);
+}
+
+strong {
+  font-weight: bold;
+}
+
+/* Contact Section */
+#contact {
+  background-color: var(--background-dark);
+  color: var(--text-light); /* Ensure contrast with white text */
+  padding: 2rem 1rem;
+}
+
+/* Footer (Copyright Section) */
+footer {
+  background-color: var(--); /* Match main background */
+  color: var(--text); /* Ensure text readability */
+  padding: 1rem 0; /* Adjust spacing for balance */
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: var(--primary); /* Primary green for links */
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--accent); 
+}
+
+/* Remove vertical space between the two columns on mobile */
+@media (max-width: 767.98px) {
+  #why-qlever .row > div {
+    margin-bottom: 0; /* Remove bottom margin on smaller screens */
+  }
+
+  #why-qlever ul {
+    margin-bottom: 0; /* Remove extra space below each list */
+  }
+}
+
