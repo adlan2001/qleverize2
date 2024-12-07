@@ -9,13 +9,17 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/d61f9541ff.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark shadow py-3">
     <div class="container">
-      <a class="navbar-brand" href="#">QLeverize - by the makers of QLever</a>
+      <a class="navbar-brand" href="#">
+        <h1 class="m-0 h3">QLeverize</h1>
+        <p class="small text m-0 lead">by the makers of QLever</p>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,17 +42,6 @@
       <p class="lead">The New Era of Knowledge Graphs: Fast, Scalable, and Easy to Use</p>
     </div>
   </header>
-
-  <!--div class="container">
-    <div class="row">
-      <div class="col">
-        
-      </div>
-      <div class="col">
-        
-      </div>
-    </div>
-  </div-->
   
   <!-- About Section -->
   <section id="about" class="py-5">
@@ -66,7 +59,7 @@
     </div>
     <!-- Video Carousel -->
     <div class="container mt-5">
-      <div id="qleverCarousel" class="carousel slide rounded-5 shadow py-5">
+      <div id="qleverCarousel" class="carousel bg-primary rounded-5 shadow py-5">
         <!-- Indicators -->
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#qleverCarousel" data-bs-slide-to="0" class="active" aria-current="true"
@@ -260,6 +253,27 @@
     </div>
   </section>
 
+  <!--Team-->
+  <section id="team" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Meet Our Team</h2>
+      <div id="team-profiles" class="row g-4">
+        <div class="col col-lg-4 col-md-6">
+          <div class="card p-3 h-100">
+            <div class="d-flex justify-content-center m-3">
+              <img src="guy.jpg" class="img-fluid rounded-circle profile-img">
+            </div>
+            <h4 class="text-center">Peter Griffin</h4>
+            <h6 class="text-center">Programmer</h6>
+            <div class="m-3 socmed d-flex justify-content-center">
+              <a href="https://linkedin.com" class="btn btn-dark shadow rounded-circle mx-1"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://linkedin.com" class="btn btn-dark shadow rounded-circle mx-1"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Contact Section -->
   <section id="contact" class="py-5">
@@ -279,6 +293,7 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="teamProfile.js"></script>
   <!-- JS code needed -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -312,6 +327,53 @@
         }
       });
     });
+
+    teamProfiles = document.getElementById("team-profiles");
+    var n = 0;
+    teamProfile.forEach(function(option){
+      var profileContainer = document.createElement("div");
+      profileContainer.classList.add("col","col-lg-4","col-md-6");
+      profileContainer.innerHTML = `
+        <div class="card p-3 h-100">
+            <div class="d-flex justify-content-center m-3">
+              <img src="${option.photo}" class="img-fluid rounded-circle profile-img">
+            </div>
+            <h4 class="text-center">${option.name}</h4>
+            <h6 class="text-center">${option.role}</h6>
+            <div class="m-3 socmed d-flex justify-content-center"></div>
+          </div>
+      `;
+      teamProfiles.appendChild(profileContainer);
+
+      var socmed = profileContainer.querySelector(".socmed");
+      console.log(socmed);
+      
+      if (option.linkedin) {
+        var socmedLink = document.createElement("a");
+        socmedLink.classList.add("btn","btn-dark","shadow","rounded-circle","mx-1")
+        socmedLink.setAttribute('href',option.linkedin);
+        socmedLink.innerHTML = `<i class="fa-brands fa-linkedin"></i>`;
+        socmed.appendChild(socmedLink);
+        n++;
+      }
+      if (option.twitter) {
+        var socmedLink = document.createElement("a");
+        socmedLink.classList.add("btn","btn-dark","shadow","rounded-circle","mx-1")
+        socmedLink.setAttribute('href',option.linkedin);
+        socmedLink.innerHTML = `<i class="fa-brands fa-x-twitter"></i>`;
+        socmed.appendChild(socmedLink);
+        n++;
+      }
+      if (option.github) {
+        var socmedLink = document.createElement("a");
+        socmedLink.classList.add("btn","btn-dark","shadow","rounded-circle","mx-1")
+        socmedLink.setAttribute('href',option.linkedin);
+        socmedLink.innerHTML = `<i class="fa-brands fa-github"></i>`;
+        socmed.appendChild(socmedLink);
+        n++;
+      }
+    });
+    
   </script>
 </body>
 

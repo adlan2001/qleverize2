@@ -183,11 +183,11 @@ footer a:hover {
   }
 }
 
-#qleverCarousel {
-  background-color: var(--accent) !important;
+.small {
+  font-size: 0.8rem !important;
 }
 
-.border-primary {
-  border-color: var(--primary) !important
+.profile-img {
+  max-width: 200px
 }
 
