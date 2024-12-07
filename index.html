@@ -257,21 +257,7 @@
   <section id="team" class="py-5">
     <div class="container">
       <h2 class="text-center mb-4">Meet Our Team</h2>
-      <div id="team-profiles" class="row g-4">
-        <div class="col col-lg-4 col-md-6">
-          <div class="card p-3 h-100">
-            <div class="d-flex justify-content-center m-3">
-              <img src="guy.jpg" class="img-fluid rounded-circle profile-img">
-            </div>
-            <h4 class="text-center">Peter Griffin</h4>
-            <h6 class="text-center">Programmer</h6>
-            <div class="m-3 socmed d-flex justify-content-center">
-              <a href="https://linkedin.com" class="btn btn-dark shadow rounded-circle mx-1"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="https://linkedin.com" class="btn btn-dark shadow rounded-circle mx-1"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="team-profiles" class="row d-flex justify-content-center g-4"></div>
     </div>
   </section>
 
@@ -328,11 +314,23 @@
       });
     });
 
-    teamProfiles = document.getElementById("team-profiles");
-    var n = 0;
-    teamProfile.forEach(function(option){
-      var profileContainer = document.createElement("div");
-      profileContainer.classList.add("col","col-lg-4","col-md-6");
+    const teamProfiles = document.getElementById("team-profiles");
+
+    const socMed = {
+      linkedin: {
+        icon: "fa-brands fa-linkedin",
+      },
+      twitter: {
+        icon: "fa-brands fa-x-twitter",
+      },
+      github: {
+        icon: "fa-brands fa-github",
+      },
+    };
+
+    teamProfile.forEach(option => {
+      const profileContainer = document.createElement("div");
+      profileContainer.classList.add("col","col-xl-3","col-lg-4","col-md-6");
       profileContainer.innerHTML = `
         <div class="card p-3 h-100">
             <div class="d-flex justify-content-center m-3">
@@ -345,33 +343,17 @@
       `;
       teamProfiles.appendChild(profileContainer);
 
-      var socmed = profileContainer.querySelector(".socmed");
-      console.log(socmed);
-      
-      if (option.linkedin) {
-        var socmedLink = document.createElement("a");
-        socmedLink.classList.add("btn","btn-dark","shadow","rounded-circle","mx-1")
-        socmedLink.setAttribute('href',option.linkedin);
-        socmedLink.innerHTML = `<i class="fa-brands fa-linkedin"></i>`;
-        socmed.appendChild(socmedLink);
-        n++;
-      }
-      if (option.twitter) {
-        var socmedLink = document.createElement("a");
-        socmedLink.classList.add("btn","btn-dark","shadow","rounded-circle","mx-1")
-        socmedLink.setAttribute('href',option.linkedin);
-        socmedLink.innerHTML = `<i class="fa-brands fa-x-twitter"></i>`;
-        socmed.appendChild(socmedLink);
-        n++;
-      }
-      if (option.github) {
-        var socmedLink = document.createElement("a");
-        socmedLink.classList.add("btn","btn-dark","shadow","rounded-circle","mx-1")
-        socmedLink.setAttribute('href',option.linkedin);
-        socmedLink.innerHTML = `<i class="fa-brands fa-github"></i>`;
-        socmed.appendChild(socmedLink);
-        n++;
-      }
+      const socmed = profileContainer.querySelector(".socmed");
+
+      Object.keys(socMed).forEach(platform => {
+        if (option[platform]) {
+          const socmedLink = document.createElement("a");
+          socmedLink.classList.add("btn","btn-dark","shadow","rounded-circle","mx-1");
+          socmedLink.setAttribute('href', option[platform]);
+          socmedLink.innerHTML = `<i class="${socMed[platform].icon}"></i>`;
+          socmed.appendChild(socmedLink);
+        }
+      });
     });
     
   </script>
