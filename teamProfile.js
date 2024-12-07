@@ -1,3 +1,15 @@
+const socMed = {
+  linkedin: {
+    icon: "fa-linkedin",
+  },
+  twitter: {
+    icon: "fa-x-twitter",
+  },
+  github: {
+    icon: "fa-github",
+  },
+};
+
 var teamProfile = [
   {
     photo: "guy.jpg",
