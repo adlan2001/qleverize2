@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="10">
+  <!--meta http-equiv="refresh" content="10"-->
   <title>QLever - QLeverize Your Data</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -52,7 +52,7 @@
   
   <!-- About Section -->
   <section id="about" class="py-5">
-    <div class="container text-center">
+    <div class="container text-center mb-5">
       <p class="lead">
         <a href="https://github.com/ad-freiburg/qlever/">QLever</a> is a powerful open-source graph database and RDF
         triplestore that allows you to load and query <strong>hundreds of billions of facts</strong> on a single
@@ -65,8 +65,8 @@
       </p>
     </div>
     <!-- Video Carousel -->
-    <div class="container">
-      <div id="qleverCarousel" class="carousel slide">
+    <div class="container mt-5">
+      <div id="qleverCarousel" class="carousel slide rounded-5 shadow py-5">
         <!-- Indicators -->
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#qleverCarousel" data-bs-slide-to="0" class="active" aria-current="true"
@@ -76,13 +76,13 @@
         <!-- Carousel Inner -->
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <video class="d-block w-100 mx-auto" style="max-width: 600px; height: auto;" muted>
+            <video class="d-block w-100 mx-auto shadow rounded" style="max-width: 600px; height: auto;" muted>
               <source src="OSM-autocomplete.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
           <div class="carousel-item">
-            <video class="d-block w-100 mx-auto" style="max-width: 600px; height: auto;" muted>
+            <video class="d-block w-100 mx-auto shadow rounded" style="max-width: 600px; height: auto;" muted>
               <source src="OSM-powerlines.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -101,31 +101,52 @@
     </div>
   </section>
 
-  <!-- Why QLever Section -->
+  <!-- Why QLever Section-->
   <section id="why-qlever" class="bg-light py-5">
     <div class="container">
       <h2 class="text-center mb-4">Why Choose QLever?</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <ul>
-            <li><strong>Unmatched Speed and Efficiency:</strong> QLever delivers fast query performance, handling
-              smaller queries in milliseconds and completing complex ones on massive datasets in seconds.</li>
-            <li><strong>Effortless Scalability:</strong> Whether working with millions or billions of triples, QLever
-              scales seamlessly, managing large datasets with ease.</li>
-            <li><strong>Cost-Effective on Commodity Hardware:</strong> Save on hardware and cloud costs with QLever’s
-              efficient design, which performs exceptionally well without clusters or specialized setups.</li>
-          </ul>
+      <div class="d-flex justify-content-center row g-4">
+        <div class="col-lg-4">
+          <div class="container pt-3 card h-100">
+            <h4>Unmatched Speed and Efficiency</h4>
+            <p>QLever delivers fast query performance, handling
+              smaller queries in milliseconds and completing complex ones on massive datasets in seconds.</p>
+          </div>
         </div>
-        <div class="col-md-6">
-          <ul>
-            <li><strong>Proven Track Record:</strong> Trusted by global projects like Wikidata, UniProt, PubChem,
-              OpenStreetMap, and Dblp.</li>
-            <li><strong>Comprehensive Features:</strong> Full SPARQL 1.1 support, GeoSPARQL for spatial queries, and
-              integrated full-text search make QLever a powerful choice.</li>
-            <li><strong>Open-Source with Commercial Options:</strong> While QLever is fully open-source, we offer
-              commercial licenses for high availability, scaling, private issue tracking, and premium support.</li>
-
-          </ul>
+        <div class="col-lg-4">
+          <div class="container pt-3 card h-100">
+            <h4>Effortless Scalability</h4>
+            <p>Whether working with millions or billions of triples, QLever
+              scales seamlessly, managing large datasets with ease.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="container pt-3 card h-100">
+            <h4>Cost-Effective on Commodity Hardware</h4>
+            <p>Save on hardware and cloud costs with QLever’s
+              efficient design, which performs exceptionally well without clusters or specialized setups.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="container pt-3 card h-100">
+            <h4>Proven Track Record</h4>
+            <p>Trusted by global projects like Wikidata, UniProt, PubChem,
+              OpenStreetMap, and Dblp.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="container pt-3 card h-100">
+            <h4>Comprehensive Features</h4>
+            <p>Full SPARQL 1.1 support, GeoSPARQL for spatial queries, and
+              integrated full-text search make QLever a powerful choice.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="container pt-3 card h-100">
+            <h4>Open-Source with Commercial Options</h4>
+            <p>While QLever is fully open-source, we offer
+              commercial licenses for high availability, scaling, private issue tracking, and premium support.</p>
+          </div>
         </div>
       </div>
     </div>
